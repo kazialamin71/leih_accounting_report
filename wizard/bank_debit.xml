@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_bank_debit" model="ir.ui.view">
+            <field name="name">Bank Debit</field>
+            <field name="model">bank.debit</field>
+            <field name="arch" type="xml">
+                <form string="Bank Debit">
+                    <group col="4" string="Dates">
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                        <field name="account"/>
+                    </group>
+
+                    <footer>
+                        <button name="print_report" type="object" string="Print Report" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_report_bank_debit" model="ir.actions.act_window">
+            <field name="name">Bank Debit Voucher</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bank.debit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+                <report
+                id="action_bank_debit_report"
+                model="bank.debit"
+                string="Bank debit"
+                report_type="qweb-pdf"
+                name="leih_accounting_report.report_bank_debit"
+                file="leih_accounting_report.report_bank_debit"
+                menu="False"
+
+        />
+        <menuitem icon="STOCK_PRINT" action="action_report_bank_debit"
+                id="menu_bank_debit_voucher" parent="leih_accounting_report" sequence="12" />
+
+
+    </data>
+</openerp>
