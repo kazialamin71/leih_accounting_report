@@ -44,8 +44,8 @@ class collcetion_details(report_sxw.rml_parse):
                 'date': items[0],
                 'ref': items[1],
                 'name': items[2],
-                'debit': items[3],
-                'credit': items[4],
+                'debit': items[3] if items[3] is not None else 0,
+                'credit': items[4] if items[4] is not None else 0,
 
             })
 

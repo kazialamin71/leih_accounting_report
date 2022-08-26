@@ -35,7 +35,9 @@
                          <t t-set="balance" t-value="0"/>
                          <tr t-foreach="get_user_names(data['form']['date_start'],data['form']['date_end'],data['form']['account'])" t-as="move_a">
                                 <t t-set="sl" t-value="sl+1"/>
+                             <t t-if="move_a['debit']>0">
                                 <t t-set="balance" t-value="balance+move_a['debit']-move_a['credit']"/>
+                             </t>
 
                                 <td><span t-esc="sl"/></td>
                              <td><span t-esc="move_a['date']"/></td>
