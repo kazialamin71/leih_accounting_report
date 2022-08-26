@@ -15,10 +15,10 @@ membership products (schemes).
     'data': [
         'wizard/cash_debit.xml',
         'wizard/bank_debit.xml',
-        'wizard/cash_flow.xml',
+        'wizard/trial_balance_view.xml',
         'report/report_cash_debit.xml',
         'report/report_bank_debit.xml',
-        'report/report_cash_flow.xml',
+        'report/report_trial_balance.xml',
 
     ],
     'demo': [],
